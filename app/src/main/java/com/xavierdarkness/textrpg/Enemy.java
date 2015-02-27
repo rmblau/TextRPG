@@ -6,12 +6,14 @@ package com.xavierdarkness.textrpg;
 public class Enemy{
 
     //fields
+    private int maxHealth;
     private int health;
     private int strength;
     private int defense;
 
     //private constructor
     private Enemy(int health, int strength, int defense){
+        maxHealth = health;
         this.health = health;
         this.strength = strength;
         this.defense = defense;
@@ -46,8 +48,15 @@ public class Enemy{
 
 
 
-    public void takeDamage(int d){
-        health -= (defense -d);
+    public void takeDamage(int strengthLevel){
+        float defensePercentage = (float) defense / 100.0f;
+        float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
+        int damage = Math.round(damageToTake);
+        if(damage <= 0){
+            damage = 1;
+        }
+        health -= damage;
+        
     }
 
     public static Enemy getInstance(int id){
