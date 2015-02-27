@@ -3,14 +3,7 @@ package com.xavierdarkness.textrpg;
 /**
  * Created by Xavierdarkness on 2/26/15.
  */
-public class Enemy{
-
-    //fields
-    private int maxHealth;
-    private int health;
-    private int strength;
-    private int defense;
-
+public class Enemy extends Character{
     //private constructor
     private Enemy(int health, int strength, int defense){
         maxHealth = health;
@@ -18,36 +11,6 @@ public class Enemy{
         this.strength = strength;
         this.defense = defense;
     }
-
-    //getter and setter methods
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public int getStrength() {
-
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public int getHealth() {
-
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-
-
     public void takeDamage(int strengthLevel){
         float defensePercentage = (float) defense / 100.0f;
         float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
@@ -56,7 +19,7 @@ public class Enemy{
             damage = 1;
         }
         health -= damage;
-        
+
     }
 
     public static Enemy getInstance(int id){
