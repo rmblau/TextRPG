@@ -15,6 +15,10 @@ public class Character {
     public void attack(Character other){
         other.takeDamage(strength);
     }
+
+    public boolean isDead(){
+        return health <=0;
+    }
     public void takeDamage(int strengthLevel){
         float defensePercentage = (float) defense / 100.0f;
         float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
