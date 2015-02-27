@@ -11,17 +11,6 @@ public class Enemy extends Character{
         this.strength = strength;
         this.defense = defense;
     }
-    public void takeDamage(int strengthLevel){
-        float defensePercentage = (float) defense / 100.0f;
-        float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
-        int damage = Math.round(damageToTake);
-        if(damage <= 0){
-            damage = 1;
-        }
-        health -= damage;
-
-    }
-
     public static Enemy getInstance(int id){
         switch(id){
             case 0:

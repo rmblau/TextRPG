@@ -11,6 +11,20 @@ public class Character {
     protected int defense;
 
 
+
+    public void attack(Character other){
+        other.takeDamage(strength);
+    }
+    public void takeDamage(int strengthLevel){
+        float defensePercentage = (float) defense / 100.0f;
+        float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
+        int damage = Math.round(damageToTake);
+        if(damage <= 0){
+            damage = 1;
+        }
+        health -= damage;
+
+    }
     //getter and setter methods
     public int getDefense() {
         return defense;
