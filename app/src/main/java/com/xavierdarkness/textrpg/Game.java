@@ -7,9 +7,7 @@ public class Game {
 
     //Fields
     private Enemy e;
-
-    //Constructor
-
+    
     Player p = new Player(100, 50, 20);
 
     /////////////////////////////////////////
