@@ -3,23 +3,24 @@ package com.xavierdarkness.textrpg;
 /**
  * Created by Xavierdarkness on 2/27/15.
  */
-public class Character {
-    //fields
+public abstract class Character {
     protected int maxHealth;
     protected int health;
     protected int strength;
     protected int defense;
+    protected String name;
 
 
-
-    public void attack(Character other){
-        other.takeDamage(strength);
+    public boolean didMiss(){
+        int n = (int) (Math.random() * 100);
+        if (n > 66){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
-
-    public boolean isDead(){
-        return health <=0;
-    }
-    public void takeDamage(int strengthLevel){
+    public int takeDamage(int strengthLevel){
         float defensePercentage = (float) defense / 100.0f;
         float damageToTake = strengthLevel - (defensePercentage * strengthLevel);
         int damage = Math.round(damageToTake);
@@ -27,15 +28,26 @@ public class Character {
             damage = 1;
         }
         health -= damage;
+        return damage;
 
     }
-    //getter and setter methods
+    public int attack(Character other){
+        if(didMiss()){
+            System.out.println(name +"'s attack missed!");
+            return -1;
+        }
+        else{
+            int n = other.takeDamage(strength);
+            return n;
+        }
+    }
+    public boolean isDead(){
+        return health <=0;
+    }
+
+    //getters
     public int getDefense() {
         return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
     }
 
     public int getStrength() {
@@ -43,20 +55,15 @@ public class Character {
         return strength;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
 
     public int getHealth() {
 
         return health;
     }
-
-    public void setHealth(int health) {
-        this.health = health;
+    public void heal(){
+        health = maxHealth;
     }
-
-
-
-
+    public String getName(){
+        return name;
+    }
 }

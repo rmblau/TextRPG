@@ -7,14 +7,17 @@ public class Game {
 
     //Fields
     private Enemy e;
-    
-    Player p = new Player(100, 50, 20);
+    //private Player p;
+
+    //Constructor
+
+    Player p = new Player("Player",100, 50, 20);
 
     /////////////////////////////////////////
     //HELPER METHODS////////////////////////
     ///////////////////////////////////////
     private Enemy getRandomEnemy(){
-        int n = (int)(Math.random() * 2);
+        int n = (int)(Math.random() * 3);
         return Enemy.getInstance(n);
     }
 
@@ -28,7 +31,6 @@ public class Game {
     private void printBattleLog(){
         System.out.println("Enemy Health: " +e.health);
         System.out.println("Player Health: " + p.health);
-
         if(didPlayerWin()){
             System.out.println("Player is victorious! Onto the next level!");
         }
@@ -46,7 +48,8 @@ public class Game {
         if(n == 0){
             c[0] = p;
             c[1] = e;
-        }else{
+        }
+        else {
             c[0] = e;
             c[1] = p;
         }
@@ -54,7 +57,6 @@ public class Game {
     }
 
     private void fight(Character first, Character second){
-
         while((!first.isDead()) && (!second.isDead())){
             first.attack(second);
             if((!first.isDead()) && (!second.isDead())){
@@ -63,18 +65,17 @@ public class Game {
         }
     }
 
+
     public void battle(){
 
         while(!p.isDead()){
-
+            p.heal();
             //generates new enemy
             e = getRandomEnemy();
             Character[] c = new Character[2];
             assignOrder(c);
-
             fight(c[0], c[1]);
             printBattleLog();
-
         }
 
     }
