@@ -11,7 +11,7 @@ public class Game {
 
     //Constructor
 
-    Player p = new Player("Player",100, 50, 20);
+    Player p = new Player("You",100, 50, 20);
 
     /////////////////////////////////////////
     //HELPER METHODS////////////////////////
