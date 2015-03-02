@@ -17,7 +17,7 @@ public class Game {
     //HELPER METHODS////////////////////////
     ///////////////////////////////////////
     private Enemy getRandomEnemy(){
-        int n = (int)(Math.random() * 3);
+        int n = (int)(Math.random() * 2);
         return Enemy.getInstance(n);
     }
 
