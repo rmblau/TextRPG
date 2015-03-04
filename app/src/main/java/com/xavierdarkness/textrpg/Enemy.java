@@ -5,19 +5,21 @@ package com.xavierdarkness.textrpg;
  */
 public class Enemy extends Character{
     //private constructor
-    private Enemy(String name, int health, int strength, int defense){
-        maxHealth = health;
-        this.health = health;
-        this.strength = strength;
-        this.defense = defense;
+    protected Enemy(String name, int health, int strength, int defense){
+        maxHealth = health + (int) (health * .1 * level);
+        this.health = health + (int) (health * .1 * level);
+        this.strength = strength + (int) (strength *.1 * level);
+        this.defense = defense + (int) (defense *.1 * level);
         this.name = name;
     }
+
     public static Enemy getInstance(int id){
         switch(id){
             case 0:
+                //health, strength, defense
                 return new Enemy("Orc",50, 10, 10);
             case 1:
-                return new Enemy("Goblin",80, 5, 40);
+                return new Enemy("wizard",800, 5000, 400);
             case 2:
                 return new Enemy("Zombie",100, 50, 20);
             default:
