@@ -8,6 +8,7 @@ public abstract class Character {
     protected int health;
     protected int strength;
     protected int defense;
+    protected int level;
     protected String name;
 
 
@@ -66,4 +67,8 @@ public abstract class Character {
     public String getName(){
         return name;
     }
+    public int getLevel(){
+        return level;
+    }
 }
+
