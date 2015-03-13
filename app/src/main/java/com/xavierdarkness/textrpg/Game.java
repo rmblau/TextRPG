@@ -1,18 +1,22 @@
 package com.xavierdarkness.textrpg;
 
+import android.app.Activity;
+import android.widget.Button;
+import android.widget.TextView;
+
 /**
  * Created by Xavierdarkness on 2/27/15.
  */
 public class Game {
-
+    TextView inventory;
     //Fields
     private Enemy e;
-    //private Player p;
+    //private Player p
+    private TextView enemyHealth;
 
     //Constructor
 
     Player p = new Player("You",100, 50, 20);
-
     /////////////////////////////////////////
     //HELPER METHODS////////////////////////
     ///////////////////////////////////////
@@ -21,7 +25,7 @@ public class Game {
         return Enemy.getInstance(n);
     }
 
-    private boolean didPlayerWin(){
+    protected boolean didPlayerWin(){
         if(e.isDead()){
             return true;
         }
@@ -29,10 +33,10 @@ public class Game {
     }
 
     private void printBattleLog(){
-        System.out.println("Enemy Health: " +e.health);
+        ("Enemy Health: " + e.health);
         System.out.println("Player Health: " + p.health);
         if(didPlayerWin()){
-            System.out.println("Player is victorious! Onto the next level!");
+
         }
         else {
             System.out.println("The hero has fallen! GAME OVER!!!/n/n");
@@ -79,9 +83,11 @@ public class Game {
         }
 
     }
-
     public static void main(String[] args){
         Game g = new Game();
         g.battle();
     }
+
+
+
 }
