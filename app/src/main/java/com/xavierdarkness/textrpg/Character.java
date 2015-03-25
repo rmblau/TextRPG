@@ -1,8 +1,6 @@
 package com.xavierdarkness.textrpg;
 
-/**
- * Created by Xavierdarkness on 2/27/15.
- */
+
 public abstract class Character {
     protected int maxHealth;
     protected int health;
@@ -10,6 +8,7 @@ public abstract class Character {
     protected int defense;
     protected int level;
     protected String name;
+    protected String missedAttack;
 
 
     public boolean didMiss(){
@@ -34,7 +33,7 @@ public abstract class Character {
     }
     public int attack(Character other){
         if(didMiss()){
-            System.out.println(name +"'s attack missed!");
+            missedAttack = (name +"'s attack missed!");
             return -1;
         }
         else{

@@ -11,7 +11,8 @@
         android:text="Chest"
         android:id="@+id/chestOneButton"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:visibility="invisible" />
 
     <Button
         android:layout_width="wrap_content"
@@ -19,7 +20,8 @@
         android:text="Chest"
         android:id="@+id/chestTwoButton"
         android:layout_alignBottom="@+id/chestOneButton"
-        android:layout_toEndOf="@+id/chestOneButton" />
+        android:layout_toEndOf="@+id/chestOneButton"
+        android:visibility="invisible" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,7 +29,8 @@
         android:text="Chest"
         android:id="@+id/chestThreeButton"
         android:layout_alignTop="@+id/chestTwoButton"
-        android:layout_toEndOf="@+id/chestTwoButton" />
+        android:layout_toEndOf="@+id/chestTwoButton"
+        android:visibility="invisible" />
 
     <Button
         android:layout_width="wrap_content"
@@ -35,24 +38,16 @@
         android:text="Chest"
         android:id="@+id/chestFourButton"
         android:layout_alignBottom="@+id/chestThreeButton"
-        android:layout_toEndOf="@+id/chestThreeButton" />
+        android:layout_toEndOf="@+id/chestThreeButton"
+        android:visibility="invisible" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Up"
         android:id="@+id/upButton"
+        android:layout_marginBottom="124dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="118dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reset"
-        android:id="@+id/resetButton"
-        android:layout_marginTop="49dp"
-        android:layout_alignTop="@+id/upButton"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -60,38 +55,29 @@
         android:layout_height="wrap_content"
         android:text="Left"
         android:id="@+id/leftButton"
-        android:layout_alignBottom="@+id/resetButton"
-        android:layout_toStartOf="@+id/resetButton" />
+        android:layout_alignTop="@+id/upButton"
+        android:layout_toStartOf="@+id/upButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Right"
         android:id="@+id/rightButton"
-        android:layout_alignTop="@+id/resetButton"
-        android:layout_toEndOf="@+id/upButton" />
+        android:layout_toEndOf="@+id/upButton"
+        android:layout_alignTop="@+id/upButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Down"
         android:id="@+id/downButton"
-        android:layout_below="@+id/resetButton"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Inventory"
-        android:id="@+id/inventoryButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_below="@+id/leftButton"
+        android:layout_toEndOf="@+id/leftButton" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="Medium Text"
         android:id="@+id/storyText"
         android:layout_marginTop="49dp"
         android:layout_below="@+id/chestTwoButton"
@@ -100,32 +86,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chest"
+        android:text="Battle"
         android:id="@+id/chestFiveButton"
-        android:layout_below="@+id/chestOneButton"
-        android:layout_toStartOf="@+id/chestTwoButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chest"
-        android:id="@+id/chestSixButton"
         android:layout_below="@+id/chestTwoButton"
-        android:layout_alignStart="@+id/chestTwoButton" />
+        android:layout_alignEnd="@+id/storyText"
+        android:visibility="invisible"
+        android:gravity="center_vertical|center_horizontal" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chest"
-        android:id="@+id/chestSevenButton"
-        android:layout_below="@+id/chestThreeButton"
-        android:layout_toEndOf="@+id/chestSixButton" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Chest"
-        android:id="@+id/battleChest"
-        android:layout_below="@+id/chestFourButton"
-        android:layout_alignParentEnd="true" />
 </RelativeLayout>
